@@ -1,6 +1,6 @@
 # Grafana Dashboard for Vault
 
-This is a Grafana Dashboard for Hashicorp Vault Metrics. It gives a overview about the status of your Hashicorp Vault Cluster, the utilization and health.
+This repository contains a Grafana Dashboard for Hashicorp Vault Enterprise with Disaster Recovery. It gives a overview about the status of your Hashicorp Vault Cluster, the utilization and health.
 
 ## Usage
 
@@ -16,7 +16,11 @@ Before using the Grafana Dashboard, ensure you have the following prerequisites 
 1. Clone the repository:
 
 ```bash
-   git clone https://github.com/your-username/your-repository.git
+    git clone https://github.com/adfinis/grafana-dashboard-vault
+```
+or 
+```bash
+    curl -LJO https://github.com/adfinis/grafana-dashboard-vault/blob/main/vault_dashboard.json
 ```
 
 2. Import the Grafana Dashboard JSON file:
