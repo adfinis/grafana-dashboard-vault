@@ -2,16 +2,23 @@
 
 This repository contains a Grafana Dashboard for Hashicorp Vault Enterprise with Disaster Recovery. It gives a overview about the status of your Hashicorp Vault Cluster, the utilization and health.
 
-## Usage
+## Features
 
-### Prerequisites
+- Cluster-Health Monitoring (DR, Node-Status, WAL, Failure Tolerance)
+- Identity (Entities by Method and Namespaces)
+- Vault and Raft Leadership
+- Token Statistics (Namespace,TTL, Auth Methods)
+- Raft Performance
+
+## Prerequisites
 
 Before using the Grafana Dashboard, ensure you have the following prerequisites installed:
 
 - [Grafana](https://grafana.com/get)
 - [Prometheus](https://prometheus.io/download/)
+- [Hashicorp Vault with telemetry 1.14+](https://developer.hashicorp.com/vault/install)
 
-### Installation
+## Installation
 
 1. Clone the repository:
 
@@ -26,11 +33,47 @@ or
 2. Import the Grafana Dashboard JSON file:
 Open your Grafana instance in a web browser.
 Navigate to the "+" menu on the left sidebar and select "Import."
-Upload the JSON file located in the dashboards/ directory.
+Upload the JSON file located in the dashboards/ directory or import it with the Dashboard ID "tbd".
+
 
 3. Configure data sources:
 
-Configure prometheus as a data source for Grafana
+Configure the correct Prometheus Datasources for Primary Vault(DS_VAULT-NONPROD) and Secondary Vault(DS_VAULT-NONPROD-DR).
+
+## Telemetry configuration
+
+To enable the telemetry for Hashicorp Vault you can follow this [Tutorial](https://developer.hashicorp.com/vault/tutorials/archive/monitor-telemetry-grafana-prometheus).
+
+Hashicorp Vault:
+```hcl
+telemetry {
+  disable_hostname = true
+  prometheus_retention_time = "12h"
+}
+```
+
+Prometheus Scrape Config Example:
+```yml
+scrape_configs:
+  - job_name: vault-1
+    metrics_path: /v1/sys/metrics
+    params:
+      format: ['prometheus']
+    scheme: http
+    static_configs:
+    - targets: ['0.0.0.1:8200']
+  - job_name: vault-2
+    metrics_path: /v1/sys/metrics
+    params:
+      format: ['prometheus']
+    scheme: http
+    static_configs:
+    - targets: ['0.0.0.2:8200']
+```
+
+Grafana Datasources:
+Create the Datasources "DS_VAULT-NONPROD" and "DS_VAULT-NONPROD-DR" in [Grafana](https://grafana.com/docs/grafana/latest/datasources/).
+
 
 ## About this repository
 
