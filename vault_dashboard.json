@@ -1,8 +1,8 @@
 {
   "__inputs": [
     {
-      "name": "DS_VAULT-NONPROD",
-      "label": "vault-nonprod",
+      "name": "DS_VAULT-01",
+      "label": "vault-01",
       "description": "",
       "type": "datasource",
       "pluginId": "prometheus",
@@ -16,8 +16,8 @@
       "pluginId": "__expr__"
     },
     {
-      "name": "DS_VAULT-NONPROD-DR",
-      "label": "vault-nonprod-dr",
+      "name": "DS_VAULT-02",
+      "label": "vault-02",
       "description": "",
       "type": "datasource",
       "pluginId": "prometheus",
@@ -99,7 +99,7 @@
         "builtIn": 1,
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_VAULT-NONPROD}"
+          "uid": "${DS_VAULT-01}"
         },
         "enable": true,
         "hide": true,
@@ -121,7 +121,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "description": "",
       "fieldConfig": {
@@ -171,7 +171,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "avg(vault_core_license_expiration_time_epoch)*1000",
@@ -188,7 +188,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "description": "Time passed since the last successful snapshot was taken.",
       "fieldConfig": {
@@ -248,7 +248,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "expr": "time() - vault_autosnapshots_last_success_time{}",
           "instant": true,
@@ -262,7 +262,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "description": "Timestamp of the last successful snapshot taken.",
       "fieldConfig": {
@@ -307,7 +307,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "expr": "vault_autosnapshots_last_success_time{}*1000",
           "instant": true,
@@ -321,7 +321,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "fieldConfig": {
         "defaults": {
@@ -401,7 +401,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "vault_autopilot_healthy",
@@ -416,7 +416,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "fieldConfig": {
         "defaults": {
@@ -500,7 +500,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "vault_autopilot_failure_tolerance",
@@ -515,7 +515,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "fieldConfig": {
         "defaults": {
@@ -602,7 +602,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "vault_autopilot_node_healthy",
@@ -618,7 +618,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "description": "Click to open system and infrastructure logs of the cluster.",
       "gridPos": {
@@ -633,8 +633,7 @@
           "language": "html",
           "showLineNumbers": false,
           "showMiniMap": false
-        },
-        "content": "<h1 style=\"text-align:center;vertical-align=middle;\"><a href=\"<Link>" "<target=\"_blank\">Click here to consult System and OpenShift logs for further investigation</a></h1>",
+        },"content": "<h1 style=\"text-align:center;vertical-align:middle\"><a href=\"<Link>\" target=\"_blank\">Click here to consult System and OpenShift logs for further investigation</a></h1>",        
         "mode": "html"
       },
       "pluginVersion": "9.2.0",
@@ -642,7 +641,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "refId": "A"
         }
@@ -652,7 +651,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "description": "Status of cluster in DR, Primary, Secondary or undefined",
       "fieldConfig": {
@@ -721,7 +720,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "expr": "vault_core_replication_dr_primary{cluster!=\"\"}",
           "hide": true,
@@ -733,7 +732,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "expr": "vault_core_replication_dr_secondary{cluster!=\"\"}",
           "hide": true,
@@ -752,7 +751,7 @@
           "type": "math"
         }
       ],
-      "title": "DR Status (vault-nonprod)",
+      "title": "DR Status (vault-01)",
       "type": "stat"
     },
     {
@@ -835,24 +834,24 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "vault_replication_wal_last_dr_wal unless vault_replication_fsm_last_remote_wal or vault_replication_fsm_last_remote_wal",
           "interval": "",
-          "legendFormat": "DR WAL INDEX (vault-nonprod)",
+          "legendFormat": "DR WAL INDEX (vault-01)",
           "refId": "A"
         },
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD-DR}"
+            "uid": "${DS_VAULT-02}"
           },
           "exemplar": true,
           "expr": "vault_replication_wal_last_dr_wal unless vault_replication_fsm_last_remote_wal or vault_replication_fsm_last_remote_wal",
           "hide": false,
           "interval": "",
-          "legendFormat": "DR WAL INDEX (vault-nonprod-dr)",
+          "legendFormat": "DR WAL INDEX (vault-02)",
           "refId": "B"
         }
       ],
@@ -862,7 +861,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD-DR}"
+        "uid": "${DS_VAULT-02}"
       },
       "description": "Status of cluster in DR, Primary, Secondary or undefined",
       "fieldConfig": {
@@ -931,7 +930,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD-DR}"
+            "uid": "${DS_VAULT-02}"
           },
           "expr": "vault_core_replication_dr_primary{cluster!=\"\"}",
           "hide": true,
@@ -943,7 +942,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD-DR}"
+            "uid": "${DS_VAULT-02}"
           },
           "expr": "vault_core_replication_dr_secondary{cluster!=\"\"}",
           "hide": true,
@@ -962,15 +961,15 @@
           "type": "math"
         }
       ],
-      "title": "DR Status (vault-nonprod-dr)",
+      "title": "DR Status (vault-02)",
       "type": "stat"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
-      "description": "Either the last DR WAL index of the primary or the last index from the primary the secondary cluster wrote. Metric only collected on vault-nonprod cluster nodes.",
+      "description": "Either the last DR WAL index of the primary or the last index from the primary the secondary cluster wrote. Metric only collected on vault-01 cluster nodes.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1016,17 +1015,17 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "vault_replication_wal_last_dr_wal unless vault_replication_fsm_last_remote_wal or vault_replication_fsm_last_remote_wal",
           "instant": true,
           "interval": "",
-          "legendFormat": "DR WAL INDEX (vault-nonprod)",
+          "legendFormat": "DR WAL INDEX (vault-01)",
           "refId": "A"
         }
       ],
-      "title": "DR WAL INDEX (vault-nonprod)",
+      "title": "DR WAL INDEX (vault-01)",
       "transformations": [
         {
           "id": "merge",
@@ -1038,7 +1037,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD-DR}"
+        "uid": "${DS_VAULT-02}"
       },
       "description": "Either the last DR WAL index of the primary or the last index from the primary the secondary cluster wrote. Metric only collected on ${datasource} cluster nodes.",
       "fieldConfig": {
@@ -1087,26 +1086,26 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD-DR}"
+            "uid": "${DS_VAULT-02}"
           },
           "exemplar": true,
           "expr": "vault_replication_wal_last_dr_wal unless vault_replication_fsm_last_remote_wal or vault_replication_fsm_last_remote_wal",
           "instant": true,
           "interval": "",
-          "legendFormat": "DR WAL INDEX (vault-nonprod-dr)",
+          "legendFormat": "DR WAL INDEX (vault-02)",
           "refId": "A"
         }
       ],
-      "title": "DR WAL INDEX (vault-nonprod-dr)",
+      "title": "DR WAL INDEX (vault-02)",
       "transformations": [],
       "type": "stat"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
-      "description": "The last WAL index of the primary cluster. Metric only collected on vault-nonprod cluster nodes.",
+      "description": "The last WAL index of the primary cluster. Metric only collected on vault-01 cluster nodes.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1152,17 +1151,17 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "vault_replication_wal_last_wal",
           "instant": false,
           "interval": "",
-          "legendFormat": "WAL INDEX (vault-nonprod)",
+          "legendFormat": "WAL INDEX (vault-01)",
           "refId": "A"
         }
       ],
-      "title": "WAL INDEX (vault-nonprod)",
+      "title": "WAL INDEX (vault-01)",
       "transformations": [
         {
           "id": "merge",
@@ -1174,9 +1173,9 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD-DR}"
+        "uid": "${DS_VAULT-02}"
       },
-      "description": "The last WAL index written. Metric only collected on vault-nonprod-dr cluster nodes.",
+      "description": "The last WAL index written. Metric only collected on vault-02 cluster nodes.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1223,24 +1222,24 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD-DR}"
+            "uid": "${DS_VAULT-02}"
           },
           "exemplar": true,
           "expr": "vault_replication_wal_last_wal",
           "instant": false,
           "interval": "",
-          "legendFormat": "WAL INDEX (vault-nonprod-dr)",
+          "legendFormat": "WAL INDEX (vault-02)",
           "refId": "A"
         }
       ],
-      "title": "WAL INDEX (vault-nonprod-dr)",
+      "title": "WAL INDEX (vault-02)",
       "transformations": [],
       "type": "stat"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "description": "Number of Leases across namespaces",
       "fieldConfig": {
@@ -1286,7 +1285,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "sum(vault_expire_num_leases)",
@@ -1301,7 +1300,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "description": "Average time to login (ms)",
       "fieldConfig": {
@@ -1350,7 +1349,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "sum(rate(vault_core_handle_login_request_sum[$interval]) / rate(vault_core_handle_login_request_count[$interval]))",
@@ -1365,7 +1364,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "description": "",
       "fieldConfig": {
@@ -1415,7 +1414,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "max(idelta(vault_audit_log_request_failure[$interval]))",
@@ -1435,7 +1434,7 @@
       "dashes": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "decimals": 3,
       "description": "Average core and log request handlers",
@@ -1488,7 +1487,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "rate(vault_audit_log_request_sum[$__interval])/rate(vault_audit_log_request_count[$__interval])",
@@ -1502,7 +1501,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "rate(vault_audit_log_response_sum[$__interval])/rate(vault_audit_log_response_count[$__interval])",
@@ -1517,7 +1516,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "rate(vault_core_handle_request_sum[$__interval])/rate(vault_core_handle_request_count[$__interval])",
@@ -1567,7 +1566,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "description": "Number of KV Engines across namespaces",
       "fieldConfig": {
@@ -1617,7 +1616,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "count(vault_secret_kv_count)",
@@ -1634,7 +1633,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "description": "Rate of Authentication Requests",
       "fieldConfig": {
@@ -1709,7 +1708,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "sum(rate(vault_core_handle_login_request_count[$interval]))",
@@ -1724,7 +1723,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_VAULT-NONPROD}"
+        "uid": "${DS_VAULT-01}"
       },
       "description": "",
       "fieldConfig": {
@@ -1774,7 +1773,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "exemplar": true,
           "expr": "max(idelta(vault_audit_log_response_failure[$interval]))",
@@ -1803,7 +1802,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Number of Entities across namespaces",
           "fieldConfig": {
@@ -1847,7 +1846,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(vault_identity_num_entities)",
@@ -1862,7 +1861,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Number of Entity Aliases across namespaces",
           "fieldConfig": {
@@ -1909,7 +1908,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(vault_identity_entity_alias_count)",
@@ -1924,7 +1923,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Entity Count by Namespace",
           "fieldConfig": {
@@ -1964,7 +1963,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum by (namespace) (vault_identity_entity_count)",
@@ -2003,7 +2002,7 @@
           },
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "fontSize": "80%",
           "format": "short",
@@ -2031,7 +2030,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "expr": "avg without(instance) (vault_identity_entity_alias_count)",
               "format": "time_series",
@@ -2072,7 +2071,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "fieldConfig": {
             "defaults": {
@@ -2120,7 +2119,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(vault_token_count)",
@@ -2136,7 +2135,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "fieldConfig": {
             "defaults": {
@@ -2192,7 +2191,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "avg(vault_token_create_count - vault_token_store_count)",
@@ -2213,7 +2212,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "decimals": 0,
           "fieldConfig": {
@@ -2261,7 +2260,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "expr": "avg without(instance) (vault_token_count_by_ttl)",
               "format": "time_series",
@@ -2307,7 +2306,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Token Count by Namespace",
           "fieldConfig": {
@@ -2346,7 +2345,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum without(instance) (vault_token_count)",
@@ -2383,7 +2382,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Token Lookup Rate",
           "fieldConfig": {
@@ -2474,7 +2473,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "rate(vault_token_lookup_count[$interval])",
@@ -2494,7 +2493,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "decimals": 0,
           "fieldConfig": {
@@ -2542,7 +2541,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "expr": "avg without(instance) (vault_token_count_by_policy)",
               "interval": "",
@@ -2591,7 +2590,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "decimals": 0,
           "fieldConfig": {
@@ -2639,7 +2638,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "avg without(instance) (vault_token_count_by_auth)",
@@ -2716,7 +2715,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "fieldConfig": {
             "defaults": {
@@ -2763,7 +2762,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "expr": "avg(irate(vault_policy_set_policy_count[1m]))",
               "format": "time_series",
@@ -2815,7 +2814,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "fieldConfig": {
             "defaults": {
@@ -2861,7 +2860,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "expr": "avg(irate(vault_policy_get_policy_count[1m]))",
               "format": "time_series",
@@ -2934,7 +2933,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Any count greater than zero means that Vault experienced a leadership change.",
           "fieldConfig": {
@@ -2991,7 +2990,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "vault_core_leadership_lost_count",
@@ -3007,7 +3006,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Last reported Vault and Raft leader node",
           "fieldConfig": {
@@ -3054,7 +3053,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "vault_raft_state_leader",
@@ -3072,7 +3071,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Increments whenever raft server starts an election. If there are frequent elections or leadership changes, it would likely indicate network issues between the raft nodes, or that the raft servers themselves are unable to keep up with the load.",
           "fieldConfig": {
@@ -3120,7 +3119,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(vault_raft_state_candidate)",
@@ -3135,7 +3134,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Measures the time since the leader was last able to contact the follower nodes when checking its leader lease",
           "fieldConfig": {
@@ -3207,7 +3206,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(rate(vault_raft_leader_lastContact_sum[$interval]) / rate(vault_raft_leader_lastContact_count[$interval]))",
@@ -3222,7 +3221,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Number of Vault cluster leadership setup failures. Failures indicate bad overall cluster leadership status.",
           "fieldConfig": {
@@ -3279,7 +3278,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "vault_core_leadership_setup_failed",
@@ -3295,7 +3294,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Number of times node has entered the follower mode. This happens when a new node joins the cluster or after the end of a leader election.",
           "fieldConfig": {
@@ -3340,7 +3339,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "vault_raft_state_follower",
@@ -3382,7 +3381,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Performance of Raft Integrated Storage Backend",
           "fieldConfig": {
@@ -3453,7 +3452,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(rate(vault_raft_storage_delete_sum[$interval]) / rate(vault_raft_storage_delete_count[$interval]))",
@@ -3466,7 +3465,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(rate(vault_raft_storage_list_sum[$interval]) / rate(vault_raft_storage_list_count[$interval]))",
@@ -3478,7 +3477,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(rate(vault_raft_storage_get_sum[$interval]) / rate(vault_raft_storage_get_count[$interval]))",
@@ -3490,7 +3489,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(rate(vault_raft_storage_put_sum[$interval]) / rate(vault_raft_storage_put_count[$interval]))",
@@ -3506,7 +3505,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "Sum of time spent to perform actions on the storage",
           "fieldConfig": {
@@ -3551,7 +3550,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(vault_raft_storage_delete_sum)",
@@ -3562,7 +3561,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(vault_raft_storage_list_sum)",
@@ -3574,7 +3573,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(vault_raft_storage_get_sum)",
@@ -3586,7 +3585,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "exemplar": true,
               "expr": "sum(vault_raft_storage_put_sum)",
@@ -3628,7 +3627,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "description": "",
           "fieldConfig": {
@@ -3676,7 +3675,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "expr": "avg(vault_runtime_heap_objects{} / vault_runtime_malloc_count{})",
               "interval": "",
@@ -3691,7 +3690,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "fieldConfig": {
             "defaults": {
@@ -3746,7 +3745,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "expr": "avg(vault_runtime_num_goroutines{})",
               "interval": "",
@@ -3764,7 +3763,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_VAULT-NONPROD}"
+            "uid": "${DS_VAULT-01}"
           },
           "decimals": 3,
           "fieldConfig": {
@@ -3814,7 +3813,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_VAULT-NONPROD}"
+                "uid": "${DS_VAULT-01}"
               },
               "expr": "avg(vault_runtime_alloc_bytes{})",
               "interval": "",
@@ -3898,8 +3897,8 @@
       {
         "current": {
           "selected": false,
-          "text": "vault-nonprod",
-          "value": "vault-nonprod"
+          "text": "vault-01",
+          "value": "vault-01"
         },
         "hide": 0,
         "includeAll": false,
