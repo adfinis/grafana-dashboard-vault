@@ -36,15 +36,17 @@ Navigate to the "+" menu on the left sidebar and select "Import."
 Upload the JSON file located in the dashboards/ directory or import it with the Dashboard ID "tbd".
 
 
-3. Configure data sources:
+3. Configure the correct Prometheus Datasources:
 
-Configure the correct Prometheus Datasources for Primary Vault(DS_VAULT-NONPROD) and Secondary Vault(DS_VAULT-NONPROD-DR).
+Primary Vault(DS_VAULT-NONPROD)
+
+Secondary Vault(DS_VAULT-NONPROD-DR)
 
 ## Telemetry configuration
 
 To enable the telemetry for Hashicorp Vault you can follow this [Tutorial](https://developer.hashicorp.com/vault/tutorials/archive/monitor-telemetry-grafana-prometheus).
 
-Hashicorp Vault:
+Hashicorp Vault Telemetry Example:
 ```hcl
 telemetry {
   disable_hostname = true
@@ -72,6 +74,7 @@ scrape_configs:
 ```
 
 Grafana Datasources:
+
 Create the Datasources "DS_VAULT-NONPROD" and "DS_VAULT-NONPROD-DR" in [Grafana](https://grafana.com/docs/grafana/latest/datasources/).
 
 
