@@ -38,9 +38,9 @@ Upload the JSON file located in the dashboards/ directory or import it with the 
 
 3. Configure the correct Prometheus Datasources:
 
-Primary Vault(DS_VAULT-NONPROD)
+Primary Vault(DS_VAULT-01)
 
-Secondary Vault(DS_VAULT-NONPROD-DR)
+Secondary Vault(DS_VAULT-02)
 
 ## Telemetry configuration
 
@@ -75,7 +75,7 @@ scrape_configs:
 
 Grafana Datasources:
 
-Create the Datasources "DS_VAULT-NONPROD" and "DS_VAULT-NONPROD-DR" in [Grafana](https://grafana.com/docs/grafana/latest/datasources/).
+Create the Datasources "DS_VAULT-01" and "DS_VAULT-02" in [Grafana](https://grafana.com/docs/grafana/latest/datasources/).
 
 
 ## About this repository
